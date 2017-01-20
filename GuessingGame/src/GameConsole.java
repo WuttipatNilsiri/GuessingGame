@@ -39,6 +39,11 @@ public class GameConsole {
 		}
 		System.out.println("Thank for play");
 	}
+	/**
+	 * get integer answer by input
+	 * @param text it like a question
+	 * @return integer (answer)
+	 */
 	public static int readInt(String text){
 		Scanner in = new Scanner(System.in);
 		System.out.print(text);
