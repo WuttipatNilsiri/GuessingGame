@@ -8,12 +8,25 @@ public class Game {
 		
 		hint = "It's between "+ (int) max + " and " + (int) min;
 	}
+	/**
+	 * 
+	 * @return
+	 */
 	public int getRandomnum(){
 		return randomNum;
 	}
+	/**
+	 * 
+	 * @return
+	 */
 	public String getHint(){
 		return hint;
 	}
+	/**
+	 * 
+	 * @param answer
+	 * @return
+	 */
 	public Boolean isCorrect(int answer){
 		boolean s;
 		if (answer != randomNum){
@@ -22,6 +35,10 @@ public class Game {
 			s = true;
 		return s;
 	}
+	/**
+	 * 
+	 * @param answer
+	 */
 	public void setHint(int answer){
 		
 		if (answer > randomNum){
