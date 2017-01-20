@@ -9,23 +9,23 @@ public class Game {
 		hint = "It's between "+ (int) max + " and " + (int) min;
 	}
 	/**
-	 * 
-	 * @return
+	 * get number that it already random with in the bound
+	 * @return that number
 	 */
 	public int getRandomnum(){
 		return randomNum;
 	}
 	/**
-	 * 
-	 * @return
+	 * get hint that was setted
+	 * @return hint that already set
 	 */
 	public String getHint(){
 		return hint;
 	}
 	/**
-	 * 
-	 * @param answer
-	 * @return
+	 * find is it equal number that randomed
+	 * @param answer input answer 
+	 * @return is it correct answer
 	 */
 	public Boolean isCorrect(int answer){
 		boolean s;
@@ -36,8 +36,8 @@ public class Game {
 		return s;
 	}
 	/**
-	 * 
-	 * @param answer
+	 * set hint by compare the answer with randomed number
+	 * @param answer input answer
 	 */
 	public void setHint(int answer){
 		
