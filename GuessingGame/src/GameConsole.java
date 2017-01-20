@@ -24,7 +24,7 @@ public class GameConsole {
 			int answer = readInt("answer : ");
 			if(answer <= maxdebug && answer >= mindebug){
 				if(g.isCorrect(answer)){
-					count++
+					count++;
 					System.out.println("Correct! " + "The Secret is " + g.getRandomnum() + " Total count : " + count);
 					con = "q";
 					break;
