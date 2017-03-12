@@ -2,50 +2,66 @@ import java.math.*;
 public class Game {
 	int randomNum;
 	String hint;
-	public Game(double max,double min){
-		double range = (max - min) + 1;     
+	int ans;
+	int max;
+	int min;
+	public Game(int max,int min){
+		this.max = max;
+		this.min = min;
+		double range = (this.max - this.min) + 1;     
 		this.randomNum = (int)((Math.random() * range) + min);
 		
-		hint = "It's between "+ (int) max + " and " + (int) min;
+		hint = "It's between "+ (int) this.max + " and " + (int) this.min;
 	}
 	/**
-	 * get number that it already random with in the bound
-	 * @return that number
+	 * 
+	 * @return
 	 */
 	public int getRandomnum(){
 		return randomNum;
 	}
 	/**
-	 * get hint that was setted
-	 * @return hint that already set
+	 * 
+	 * @return
 	 */
 	public String getHint(){
 		return hint;
 	}
 	/**
-	 * find is it equal number that randomed
-	 * @param answer input answer 
-	 * @return is it correct answer
+	 * 
+	 * @param answer
+	 * @return
 	 */
-	public Boolean isCorrect(int answer){
+	public Boolean isCorrect(){
 		boolean s;
-		if (answer != randomNum){
+		if (ans != randomNum){
 			s = false;
 		}else
 			s = true;
 		return s;
 	}
 	/**
-	 * set hint by compare the answer with randomed number
-	 * @param answer input answer
+	 * 
+	 * @param answer
 	 */
-	public void setHint(int answer){
+	public void setHint(){
 		
-		if (answer > randomNum){
+		if (ans > randomNum){
 			hint = "too big";
-		}else if (answer < randomNum){
+			if (ans > max) hint = "Out of Bound";
+		}else if (ans < randomNum){
 			hint = "too small";
-		}
+			if (ans < max) hint = "Out of Bound";
+		}else 
+			hint = "correct";
+		
+		
+		
+	}
+	public void setAns(int ans){
+		this.ans = ans;
+		setHint();
+		
 	}
 	
 

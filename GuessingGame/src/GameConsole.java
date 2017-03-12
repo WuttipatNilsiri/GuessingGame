@@ -23,7 +23,8 @@ public class GameConsole {
 		while(con != "q"){
 			int answer = readInt("answer : ");
 			if(answer <= maxdebug && answer >= mindebug){
-				if(g.isCorrect(answer)){
+				g.setAns(answer);
+				if(g.isCorrect()){
 					count++;
 					System.out.println("Correct! " + "The Secret is " + g.getRandomnum() + " Total count : " + count);
 					con = "q";
@@ -31,7 +32,7 @@ public class GameConsole {
 				}
 				else
 					count++;
-					g.setHint(answer);
+					g.setHint();
 					System.out.println(g.getHint() + " count : " + count);
 			}
 			else 
@@ -40,9 +41,9 @@ public class GameConsole {
 		System.out.println("Thank for play");
 	}
 	/**
-	 * get integer answer by input
-	 * @param text it like a question
-	 * @return integer (answer)
+	 * 
+	 * @param text
+	 * @return
 	 */
 	public static int readInt(String text){
 		Scanner in = new Scanner(System.in);
